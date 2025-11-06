@@ -87,28 +87,28 @@ const Dashboard = () => {
       description: "Iniciar turno con fondo inicial",
       icon: DollarSign,
       color: "bg-primary",
-      action: () => toast({ title: "Próximamente", description: "Función en desarrollo" }),
+      action: () => navigate("/apertura-caja"),
     },
     {
       title: "Arqueo de Caja",
       description: "Contar efectivo y cerrar turno",
       icon: Clock,
       color: "bg-secondary",
-      action: () => toast({ title: "Próximamente", description: "Función en desarrollo" }),
+      action: () => navigate("/arqueo-caja"),
     },
     {
       title: "Traslado de Efectivo",
       description: "Enviar efectivo a Caja Principal",
       icon: ArrowRightLeft,
       color: "bg-warning",
-      action: () => toast({ title: "Próximamente", description: "Función en desarrollo" }),
+      action: () => navigate("/traslado-efectivo"),
     },
     {
       title: "Recepción de Traslado",
       description: "Recibir efectivo en Caja Principal",
       icon: CheckCircle,
       color: "bg-secondary",
-      action: () => toast({ title: "Próximamente", description: "Función en desarrollo" }),
+      action: () => navigate("/recepcion-traslado"),
     },
   ];
 
@@ -167,7 +167,10 @@ const Dashboard = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Accesos Rápidos</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card 
+              className="hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => navigate("/historial")}
+            >
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <FileText className="h-5 w-5 text-primary" />
@@ -179,7 +182,10 @@ const Dashboard = () => {
               </CardHeader>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card 
+              className="hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => toast({ title: "Próximamente", description: "Reportes en desarrollo" })}
+            >
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <FileText className="h-5 w-5 text-primary" />
@@ -191,7 +197,10 @@ const Dashboard = () => {
               </CardHeader>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card 
+              className="hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => toast({ title: "Próximamente", description: "Configuración en desarrollo" })}
+            >
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <Settings className="h-5 w-5 text-primary" />
